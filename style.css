@@ -1,0 +1,284 @@
+/* General */
+
+:root {
+  --theme-color: rgb(159, 108, 3);
+  --light-theme: rgb(244, 226, 191);
+  --dark-theme: rgb(31, 21, 1);
+  --spacing: 1em;
+  --spacing-md: 2em;
+  --spacing-lg: 3em;
+  --fullscreen: 100vh;
+  --navbar-size: 50px;
+  --curve: 5px;
+  --shadow: 0 5px 5px rgba(0, 0, 0, 0.7);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--light-theme);
+  width: 100%;
+  overflow-x: hidden;
+  font-family: "Orbitron", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Utilities */
+
+.w100 {
+  width: 100%;
+}
+
+.dfx {
+  display: flex;
+}
+
+.fxdc {
+  flex-direction: column;
+}
+
+.jcsb {
+  justify-content: space-between;
+}
+
+.aic {
+  align-items: center;
+}
+
+.jcc {
+  justify-content: space-between;
+}
+
+.jcsev {
+  justify-content: space-evenly;
+}
+
+.container1440 {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.logo {
+  order: 1;
+  color: var(--light-theme);
+}
+
+.icon {
+  order: 2;
+}
+
+/* orderly styled */
+
+nav {
+  background-color: var(--theme-color);
+  animation: 1s linear 3s backwards appear;
+}
+
+.links-box {
+    padding: .5em 1em;
+}
+
+.links-btn {
+  background-color: transparent;
+  border: 0;
+  height: 30px;
+  width: 30px;
+  padding: 0.1em;
+}
+
+.bar {
+  background-color: var(--light-theme);
+  margin: auto;
+  width: 90%;
+  height: 2px;
+  border-radius: 5px;
+}
+
+.link-list {
+  display: none;
+}
+
+.icon {
+  color: var(--light-theme);
+}
+
+section.hero {
+  min-height: calc(var(--fullscreen) - var(--navbar-size));
+  padding: var(--spacing);
+  overflow: hidden;
+}
+
+header {
+  text-align: center;
+  animation: 1s linear 1s backwards appear;
+}
+
+header h1 {
+  text-transform: uppercase;
+  color: rgb(159, 108, 3);
+  font-weight: bolder;
+  font-size: 2.1rem;
+}
+
+header p {
+  font-size: 0.55rem;
+  font-family: "Orbitron", sans-serif;
+  font-weight: 600;
+  color: rgb(107, 105, 105);
+}
+
+.buttons {
+  animation: 1s linear 2s backwards appear;
+}
+
+.disc {
+  animation: 1s linear 3s backwards appear;
+}
+
+.disc img {
+  animation: 40s linear 4s infinite play-disc;
+}
+
+.buttons > button {
+  width: 40%;
+  border: 0;
+  padding: 1em;
+  background-color: rgb(159, 108, 3);
+  color: var(--light-theme);
+  text-transform: uppercase;
+  border-radius: var(--curve);
+  font-weight: light;
+  box-shadow: var(--shadow);
+  font-family: "Orbitron", sans-serif;
+}
+
+@keyframes play-disc {
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@media screen and (min-width: 375px) {
+  header h1 {
+    font-size: 2.5rem;
+  }
+}
+
+@media screen and (min-width: 425px) {
+  header h1 {
+    font-size: 2.9rem;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  section.hero {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+      "header disc"
+      "buttons disc";
+    gap: 2em;
+  }
+
+  header {
+    grid-area: header;
+    align-self: end;
+  }
+
+  header h1 {
+    font-size: 2.4rem;
+  }
+
+  header p {
+    font-size: 0.6rem;
+  }
+
+  .disc {
+    grid-area: disc;
+  }
+
+  .buttons {
+    grid-area: buttons;
+    align-self: start;
+    justify-content: center;
+    gap: 2em;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  nav {
+    padding-inline: 2em;
+  }
+
+  .links-btn {
+    display: none;
+  }
+
+  .logo {
+    order: -1;
+  }
+
+  .link-list {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    gap: 2em;
+  }
+
+  .link-list li {
+    color: var(--light-theme);
+    font-size: 0.7em;
+    text-transform: lowercase;
+    font-weight: bold;
+  }
+
+  header h1 {
+    font-size: 3.1rem;
+  }
+
+  header p {
+    font-size: 0.7rem;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  header h1 {
+    font-size: 4.7rem;
+  }
+  header p {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  header h1 {
+    font-size: 4.3rem;
+  }
+
+  header p {
+    font-size: 1rem;
+  }
+}
