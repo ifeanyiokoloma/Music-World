@@ -11,6 +11,7 @@
   --navbar-size: 50px;
   --curve: 5px;
   --shadow: 0 5px 5px rgba(0, 0, 0, 0.7);
+  --text-weight: 300;
 }
 
 * {
@@ -24,6 +25,7 @@ body {
   width: 100%;
   overflow-x: hidden;
   font-family: "Orbitron", sans-serif;
+  user-select: none;
 }
 
 a {
@@ -37,7 +39,38 @@ img {
   object-fit: cover;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-align: center;
+  color: var(--theme-color);
+  text-transform: uppercase;
+}
+
+p,
+li {
+  font-size: 0.8rem;
+  color: var(--dark-theme);
+}
+
+section {
+  margin-bottom: var(--spacing-lg);
+  padding: var(--spacing);
+ 
+}
+
 /* Utilities */
+
+.material-symbols-rounded {
+  font-variation-settings:
+  'FILL' 1,
+  'wght' 900,
+  'GRAD' 0,
+  'opsz' 48
+}
 
 .w100 {
   width: 100%;
@@ -60,11 +93,50 @@ img {
 }
 
 .jcc {
-  justify-content: space-between;
+  justify-content: center;
 }
 
 .jcsev {
   justify-content: space-evenly;
+}
+
+.list-none {
+  list-style: none;
+}
+
+.active-item {
+  background: var(--theme-color);
+  color: var(--light-theme) !important;
+  padding-left: 1em;
+  padding-right: 1em;
+  padding-top: 0.8em;
+  padding-bottom: 0.8em;
+  border-radius: var(--curve);
+  font-weight: 600;
+}
+
+.sm-gap {
+  gap: .9em;
+}
+
+.gap {
+  gap: var(--spacing);
+}
+
+.mb {
+  margin-bottom: var(--spacing);
+}
+
+.normal-w {
+  font-weight: var(--text-weight);
+}
+
+.ttc {
+  text-transform: capitalize;
+}
+
+.text-space {
+  letter-spacing: 0.05em;
 }
 
 .container1440 {
@@ -72,6 +144,8 @@ img {
   margin: 0 auto;
 }
 
+/* orderly styled */
+/* Navbar */
 .logo {
   order: 1;
   color: var(--light-theme);
@@ -81,17 +155,19 @@ img {
   order: 2;
 }
 
-/* orderly styled */
-
 nav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
   background-color: var(--theme-color);
   animation: 1s linear 3s backwards appear;
 }
 
 .links-box {
-    padding: .5em 1em;
+  padding: 0.5em 1em;
 }
 
+/* Hamburger Button */
 .links-btn {
   background-color: transparent;
   border: 0;
@@ -107,6 +183,7 @@ nav {
   height: 2px;
   border-radius: 5px;
 }
+/* Hamburger Button Ends */
 
 .link-list {
   display: none;
@@ -116,10 +193,10 @@ nav {
   color: var(--light-theme);
 }
 
+/* Hero */
 section.hero {
-  min-height: calc(var(--fullscreen) - var(--navbar-size));
-  padding: var(--spacing);
   overflow: hidden;
+   min-height: calc(var(--fullscreen) - var(--navbar-size));
 }
 
 header {
@@ -165,6 +242,25 @@ header p {
   box-shadow: var(--shadow);
   font-family: "Orbitron", sans-serif;
 }
+/* Hero Ends */
+
+
+.icons {
+  background: var(--light-theme);
+  border-radius: 50%;
+  color: var(--theme-color);
+  padding: .2em;
+  gap: 1em;
+}
+
+/* Trending */
+
+/* Footer */
+footer {
+  background: var(--dark-theme);
+  height: var(--navbar-size);
+  color: var(--light-theme);
+}
 
 @keyframes play-disc {
   100% {
@@ -201,6 +297,14 @@ header p {
       "header disc"
       "buttons disc";
     gap: 2em;
+  }
+
+  main {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 3em;
+    padding-left: 3em;
+    padding-right: 3em;
   }
 
   header {
